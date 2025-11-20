@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMC 전문 사업관리 컨설팅 | 33년 군수 경험 기반</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '🛡️';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background: #38a169;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.6);
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #2c5282;
+        }
+        
+        .cta-secondary:hover {
+            background: #f7fafc;
+            color: #1a365d;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1a365d;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            background: white;
+        }
+        
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: #fff5f5;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #e53e3e;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-card h3 {
+            color: #c53030;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        /* Solutions Section */
+        .solutions-section {
+            background: linear-gradient(to bottom, #f7fafc, #edf2f7);
+        }
+        
+        .solution-item {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .solution-item:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .solution-item h3 {
+            color: #2c5282;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .solution-item .badge {
+            background: #4299e1;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.6em;
+        }
+        
+        .solution-item p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        
+        .solution-item strong {
+            color: #2d3748;
+        }
+        
+        /* Services Table */
+        .services-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            gap: 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .service-row:first-child {
+            background: #2c5282;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .service-cell {
+            padding: 25px;
+            border-right: 1px solid #e2e8f0;
+        }
+        
+        .service-cell:last-child {
+            border-right: none;
+        }
+        
+        .service-row:not(:first-child):hover {
+            background: #f7fafc;
+        }
+        
+        /* Consultant Section */
+        .consultant-section {
+            background: white;
+        }
+        
+        .consultant-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .consultant-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .consultant-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .consultant-card li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.1em;
+        }
+        
+        .consultant-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .consultant-card li::before {
+            content: '✓ ';
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .offer-box {
+            background: white;
+            color: #2d3748;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .offer-box h3 {
+            color: #c05621;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .service-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-cell {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🛡️ 33년 군수 경험 기반<br>PMC 프로젝트 성공을 위한 빈틈없는 행정/병참 통제 전문가</h1>
+            <p class="subtitle">33년 군수 경험이 담보하는 빈틈없는 행정 및 병참 지원으로,<br>귀사의 프로젝트 성공률을 극대화합니다.</p>
+            <a href="#contact" class="cta-button">✅ 무료 진단 서비스 신청하기</a>
+            <a href="tel:010-0000-0000" class="cta-button cta-secondary">📞 전화 문의</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">🎯 당신의 프로젝트, 왜 불안합니까?</h2>
+            <p class="section-subtitle">복잡하고 엄격한 국방/방위사업청과의 계약 절차, 예측 불가능한 해외 PMC 작전 환경, 그리고 감사 시 반드시 대비해야 할 군수품 재고 및 기록 관리…<br><strong>이러한 '눈에 보이지 않는 위험'들이 귀사의 프로젝트 성공을 가로막고 있습니다.</strong></p>
+            
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <h3>⚠️ 납품 및 계약 불이행 리스크</h3>
+                    <p>복잡한 군 행정 절차 및 납품 규격을 정확히 이해하지 못해 발생하는 계약 지연과 오류</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🚨 위기 상황 대응 실패</h3>
+                    <p>해외 프로젝트(PMC) 진행 중 발생한 물류/인력 이탈에 대비한 체계적인 비상 계획 부재</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📋 행정 감사 패널티</h3>
+                    <p>고가 장비 및 기밀 문서의 군수 수준 보안 통제 시스템이 없어 감사에 취약</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <h2 class="section-title">🎖️ 저희가 제공하는 차별화된 경쟁력</h2>
+            <p class="section-subtitle">33년간 군 병참장교로서 국방의 최전선에서 쌓아 올린 '통제 및 관리' 역량을 민간 PMC/방산 영역에 이식합니다.</p>
+            
+            <div class="solution-item">
+                <h3><span class="badge">01</span> 조달 및 계약 프로세스 통제</h3>
+                <p><strong>경쟁력:</strong> 정확한 군 행정 및 계약 절차에 대한 깊이 있는 이해와 33년간의 수행 경험</p>
+                <p><strong>제공 서비스:</strong> 국방부/방사청 계약 절차, 납품 규격, 대금 청구 및 행정 감사 대비를 위한 표준화된 매뉴얼 구축 및 자문</p>
+            </div>
+            
+            <div class="solution-item">
+                <h3><span class="badge">02</span> 작전/프로젝트 병참 지원 기획</h3>
+                <p><strong>경쟁력:</strong> 위기 상황 시 조직 관리 및 물류 프로세스 개선을 통해 성과를 극대화했던 경험</p>
+                <p><strong>제공 서비스:</strong> PMC 임무 또는 프로젝트에 필요한 보급품, 장비, 인력의 이동 및 비축 계획(Contingency Plan) 설계 및 현장 적용 컨설팅</p>
+            </div>
+            
+            <div class="solution-item">
+                <h3><span class="badge">03</span> 보안 및 자산 통제 시스템 구축</h3>
+                <p><strong>경쟁력:</strong> 군수품의 정밀한 재고 통제 및 보안 감사 대응 노하우</p>
+                <p><strong>제공 서비스:</strong> 고가 장비, 기밀 문서, 군수 물자에 준하는 자산의 입출고 통제 및 군수 수준의 보안 절차 수립</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Table Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">📦 핵심 컨설팅 모듈</h2>
+            <p class="section-subtitle">귀사가 필요로 하는 영역에 맞춰 3가지 핵심 모듈을 조합하여 컨설팅을 제공합니다.</p>
+            
+            <div class="services-table">
+                <div class="service-row">
+                    <div class="service-cell">서비스 모듈</div>
+                    <div class="service-cell">상세 내용</div>
+                    <div class="service-cell">기대 효과</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-cell"><strong>프로젝트 조달/행정 통제</strong></div>
+                    <div class="service-cell">국방부/방사청 기준에 맞는 계약 서류, 물자 조달, 재물 관리 및 기록 보존 시스템 구축</div>
+                    <div class="service-cell">계약 오류 0% 도전, 행정 감사 대비 완벽한 기록 보존으로 불필요한 비용 제거</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-cell"><strong>작전 병참 지원 기획</strong></div>
+                    <div class="service-cell">운송 지연, 인력 이탈 등에 대비한 비상 보급망 및 자원 재배치 계획 수립</div>
+                    <div class="service-cell">위기 시 프로젝트 중단 방지, 보급망 유지 노하우를 통한 작전 성과 극대화</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-cell"><strong>자산 및 보안 관리 시스템</strong></div>
+                    <div class="service-cell">고가 장비, 기밀 정보에 대한 군수 수준의 입출고 통제 및 보안 감사 대응 체계 이식</div>
+                    <div class="service-cell">군수품 재고 정밀 통제, 보안 규정 준수로 인한 기업 신뢰도 상승</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultant Section -->
+    <section class="consultant-section">
+        <div class="container">
+            <h2 class="section-title">👤 컨설턴트 소개</h2>
+            <p class="section-subtitle">PMC 병참 및 행정 통제 전문가</p>
+            
+            <div class="consultant-card">
+                <h3>🎖️ 33년 국방 실무 경험의 전문가</h3>
+                <ul>
+                    <li>33년간 군 병참장교로 복무</li>
+                    <li>기획, 물류/군수 프로세스 관리 전문</li>
+                    <li>위기 시 조직 통제 및 성과 극대화 경험 다수</li>
+                    <li>대전/세종 지역 국방 및 행정 인프라에 대한 높은 이해도</li>
+                    <li>즉각적이고 실질적인 솔루션 제공 가능</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>📞 시작은 '무료 진단'부터!</h2>
+            <p>저희의 전문성을 가장 빠르게 경험할 수 있는 기회입니다.</p>
+            
+            <div class="offer-box">
+                <h3>🎁 초기 마케팅 오퍼</h3>
+                <p><strong>'33년 군수 경험 기반, 빈틈없는 국방 프로젝트<br>행정 감사 대비 진단 서비스'</strong></p>
+                <p style="margin-top: 20px;">현재 귀사의 조달, 행정, 재고 관리 시스템을 간략히 진단하고<br>가장 시급한 개선 방안을 제안해 드립니다.</p>
+            </div>
+            
+            <p style="font-size: 1.5em; font-weight: 700; margin-bottom: 30px;">✅ 프로젝트 성공률 극대화, 지금 바로 전문가와 상의하십시오.</p>
+            
+            <a href="mailto:contact@pmc-consulting.com" class="cta-button" style="background: white; color: #c05621;">📧 이메일로 문의하기</a>
+            <a href="tel:010-0000-0000" class="cta-button">📞 전화로 상담받기</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PMC 전문 사업관리 컨설팅. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">대전/세종 지역 국방 프로젝트 전문 | 33년 군수 경험 기반</p>
+        </div>
+    </footer>
+</body>
+</html>
